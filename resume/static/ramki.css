@@ -1,3 +1,4 @@
+/* Existing CSS up to 768px */
 /* Reset CSS */
 * {
     margin: 0;
@@ -82,10 +83,36 @@ body {
     justify-content: center;
     padding: 70px 10% 0;
     backdrop-filter: blur(5px);
+    opacity: 0; /* Initially hide */
+    animation: fadeIn 1s ease-out forwards; /* Apply fade-in animation */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .header-text {
     text-align: center;
+    opacity: 0; /* Initially hide */
+    animation: textReveal 1s ease-out 0.5s forwards; /* Apply text reveal animation */
+}
+
+@keyframes textReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .header-text .role {
@@ -108,9 +135,9 @@ body {
     color: #ff004f;
 }
 
+
 /* About Section */
 #about {
-  
     background-color: #333;
     padding: 50px;
     text-align: center;
@@ -203,7 +230,6 @@ body {
 
 /* Services Section */
 #Service {
-   
     padding: 30px 0;
 }
 
@@ -227,7 +253,7 @@ body {
     text-align: center;
     width: 77%;
     margin-left: 50px;
-    transition: background 0.5s, transform 0.5s; 
+    transition: background 0.5s, transform 0.5s;
     background: #262626;
     padding: 40px;
     font-size: 13px;
@@ -257,7 +283,8 @@ body {
 .services-list a:hover {
     border-bottom-color: #00aaff;
 }
-.services-list div:hover{
+
+.services-list div:hover {
     background: #ff004f;
     transform: translateY(-10px);
 }
@@ -332,7 +359,6 @@ body {
     height: 100%; /* Show the content by expanding from 0 to 100% height */
 }
 
-
 #portfolio .work .layer h3,
 #portfolio .work .layer p {
     margin-bottom: 10px;
@@ -347,8 +373,6 @@ body {
 #portfolio .work .layer a:hover {
     color: #00aaff; /* Hover color */
 }
-
-/* Your CSS styles here */
 
 /* Modal styles */
 .modal {
@@ -370,7 +394,6 @@ body {
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
-
 }
 
 .close {
@@ -385,7 +408,7 @@ body {
 .close:focus {
     color: black;
     text-decoration: none;
-}
+} 
 
 .para {
     color: white;
@@ -397,6 +420,7 @@ body {
     color: #ff004f;
     font-weight: bold;
 }
+
 .toggle-link {
     display: inline-block;
     width: 40px; /* Adjust as needed */
@@ -406,6 +430,7 @@ body {
     text-align: center;
     line-height: 40px; /* Centers the icon vertically */
 }
+
 .link {
     position: absolute;
     bottom: 20px;
@@ -423,11 +448,23 @@ body {
 .link:hover {
     background-color: #0056b3;
 }
+
+/* Animation classes */
+.animate-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Contact section styles */
-/* Contact Section Styles */
 .contact-left {
     flex-basis: 35%;
-    gap: 20px; 
+    gap: 20px;
     margin-top: 10%;
 }
 
@@ -493,8 +530,7 @@ body {
     margin-left: 10%;
 }
 
-
-.contact-right form input, 
+.contact-right form input,
 .contact-right form textarea {
     width: 100%;
     border: 0;
@@ -507,7 +543,7 @@ body {
     border-radius: 6px;
 }
 
-.contact-right form input::placeholder, 
+.contact-right form input::placeholder,
 .contact-right form textarea::placeholder {
     color: #bbb;
 }
@@ -526,7 +562,6 @@ body {
 .contact-right form button:hover {
     background: #e60043;
 }
-
 
 @media (max-width: 768px) {
     .header {
@@ -590,5 +625,86 @@ body {
 
     .header-text h1 {
         font-size: 36px; /* Font size adjustment for h1 inside .header-text */
+    }
+
+    /* Contact section styles */
+    .contact-left {
+        flex-basis: 100%;
+        gap: 20px;
+        margin-top: 10%;
+    }
+
+    .contact-left p {
+        margin-top: 20px; /* Adjusted margin top */
+        font-size: 16px; /* Adjusted font size */
+    }
+
+    .contact-left p i {
+        font-size: 20px; /* Adjusted font size */
+    }
+
+    .social-icons {
+        margin-top: 20px; /* Adjusted margin top */
+    }
+
+    .social-icons a {
+        font-size: 24px; /* Adjusted font size */
+    }
+
+    .contact-right form {
+        width: 100%;
+        margin-top: 20px; /* Adjusted margin top */
+    }
+
+    .contact-right form input,
+    .contact-right form textarea {
+        font-size: 16px; /* Adjusted font size */
+    }
+
+    .contact-right form button {
+        font-size: 16px; /* Adjusted font size */
+    }
+}
+
+@media (max-width: 1024px) {
+    /* Target devices like Samsung tablets */
+    .header {
+        padding: 20px 5%; /* Adjusted padding for .header */
+    }
+
+    .navbar ul li a {
+        font-size: 16px; /* Font size adjustment for navbar links */
+    }
+
+    .role {
+        font-size: 24px; /* Font size adjustment for .role */
+    }
+
+    .header-text {
+        margin-top: 30%; /* Margin top adjustment for .header-text */
+        font-size: 24px; /* Font size adjustment for .header-text */
+    }
+
+    .header-text h1 {
+        font-size: 48px; /* Font size adjustment for h1 inside .header-text */
+    }
+
+    .about-col-1,
+    .about-col-2 {
+        flex-basis: 100%; /* Flex basis adjustment for .about-col-1 and .about-col-2 */
+        margin-bottom: 20px; /* Margin bottom adjustment for .about-col-1 and .about-col-2 */
+    }
+
+    .services-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Grid layout adjustment for services */
+        grid-gap: 20px; /* Grid gap adjustment for services */
+    }
+
+    .contact-left {
+        flex-basis: 100%; /* Flex basis adjustment for .contact-left */
+    }
+
+    #portfolio .work {
+        flex: 1 0 calc(50% - 20px); /* Layout adjustment for portfolio work items */
     }
 }
